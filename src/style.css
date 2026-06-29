@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: hsl(180, 73%, 90%);
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.card h1 {
+  margin-bottom: 12px;
+}
+@media (min-width: 768px) {
+  .card {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    max-width: 480px;
+  }
+}
