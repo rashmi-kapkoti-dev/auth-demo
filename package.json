@@ -1,0 +1,32 @@
+{
+  "name": "auth-demo",
+  "version": "1.0.0",
+  "description": "Learning and implementing modern authentication flows.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "format": "prettier . --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rashmi-kapkoti-dev/auth-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rashmi-kapkoti-dev/auth-demo/issues"
+  },
+  "homepage": "https://github.com/rashmi-kapkoti-dev/auth-demo#readme",
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "prettier": "^3.9.1",
+    "vite": "^8.1.0"
+  }
+}
