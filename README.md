@@ -94,4 +94,11 @@ Press `Ctrl + C` in each terminal to stop the client and server.
 
 ## API
 
-- `POST /api/auth/google` — accepts a Google ID token and returns the user. Sets access and refresh tokens as HTTP-only cookies.
+- `POST /api/auth/google` — Google login. Sets access and refresh tokens as HTTP-only cookies.
+- `POST /api/auth/logout` — Clears auth cookies.
+- `GET /api/users/me` — Returns the logged-in user (protected).
+- `GET /api/admin/panel` — Admin-only endpoint (protected + RBAC).
+
+## Roles
+
+Users get the `user` role by default. Set `ADMIN_EMAIL` in `server/.env` to your Google account email to get the `admin` role on login.

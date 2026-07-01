@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { verifyGoogleToken } from "../services/auth.service.js";
-import { findOrCreateUser } from "../services/user.service.js";
+import { findOrCreateUser, formatUser } from "../services/user.service.js";
 import {
   generateAccessToken,
   generateRefreshToken,
@@ -40,7 +40,7 @@ export const googleLogin = async (req: Request, res: Response) => {
     });
     return res.status(200).json({
       success: true,
-      user,
+      user: formatUser(user),
     });
   } catch (error) {
     return res.status(500).json({
@@ -48,4 +48,23 @@ export const googleLogin = async (req: Request, res: Response) => {
       message: "Authentication failed",
     });
   }
+};
+
+export const logout = (_req: Request, res: Response) => {
+  const isProduction = process.env.NODE_ENV === "production";
+
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: "lax",
+  });
+  res.clearCookie("refreshToken", {
+    httpOnly: true,
+    secure: isProduction,
+    sameSite: "lax",
+  });
+
+  return res.status(200).json({
+    success: true,
+  });
 };
