@@ -14,6 +14,14 @@ const Dashboard = () => {
     <div className="container">
       <div className="card">
         <h1>Dashboard</h1>
+        {user?.picture && (
+          <img
+            src={user.picture}
+            alt={user.name}
+            className="user-avatar"
+            referrerPolicy="no-referrer"
+          />
+        )}
         <p>Welcome, {user?.name}</p>
         <p>Role: {user?.role}</p>
         <div className="actions">

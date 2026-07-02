@@ -26,6 +26,15 @@ body {
 .card h1 {
   margin-bottom: 12px;
 }
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 12px;
+  display: block;
+  border: 3px solid hsl(180, 73%, 80%);
+}
 .card p {
   margin-bottom: 8px;
 }
